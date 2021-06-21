@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEF0F1"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/green">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/radius_oval"
+            android:src="@drawable/profile" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_box"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/radius_box">
+
+        <TextView
+            android:id="@+id/halo_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:fontFamily="@font/medium"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:text="@string/txt_halo"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/selamat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/halo_user"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp"
+            android:fontFamily="@font/medium"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:text="@string/txt_selamat"
+            ></TextView>
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_box"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="25dp"
+        tools:listitem="@layout/item_dashboard">
+    </androidx.recyclerview.widget.RecyclerView>
+</RelativeLayout>
