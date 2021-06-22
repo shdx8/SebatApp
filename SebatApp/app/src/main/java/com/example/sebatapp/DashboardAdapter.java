@@ -32,13 +32,13 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.Dash
         String logomenu = getData.getImg();
         holder.titleMenu.setText(titlemenu);
         if(logomenu.equals("logomenu1")) {
-            holder.imgMenu.setImageResource(R.drawable.tambah);
+            holder.imgMenu.setImageResource(R.drawable.dashboard);
         } else if (logomenu.equals("logomenu2")) {
-            holder.imgMenu.setImageResource(R.drawable.dipinjam1);
+            holder.imgMenu.setImageResource(R.drawable.pinjam);
         } else if (logomenu.equals("logomenu3")) {
-            holder.imgMenu.setImageResource(R.drawable.profit1);
-        } else if (logomenu.equals("logomenu4")) {
             holder.imgMenu.setImageResource(R.drawable.history);
+        } else if (logomenu.equals("logomenu4")) {
+            holder.imgMenu.setImageResource(R.drawable.info);
         }
     }
 

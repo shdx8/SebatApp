@@ -16,7 +16,7 @@
             android:id="@+id/logo_menu"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            tools:src="@drawable/tambah" />
+            tools:src="@drawable/dashboard" />
 
         <TextView
             android:id="@+id/menu_tambah"
@@ -27,6 +27,6 @@
             android:fontFamily="@font/medium"
             android:textColor="@color/black"
             android:textSize="12sp"
-            tools:text="Tambah Data" />
+            tools:text="Dashboard" />
     </LinearLayout>
 </LinearLayout>

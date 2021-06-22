@@ -3,6 +3,7 @@
     package="com.example.sebatapp">
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,11 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SebatApp">
-        <activity android:name=".ProfileActivity"></activity>
+        <activity
+            android:name=".DashboardActivity"
+            android:label="@string/title_activity_dashboard">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ProfileActivity" />
         <activity android:name=".RiwayatActivity" />
-        <activity android:name=".PenghasilanActivity" />
-        <activity android:name=".DipinjamActivity" />
-        <activity android:name=".TambahActivity" />
+        <activity android:name=".BantuanActivity" />
+        <activity android:name=".PinjamActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
