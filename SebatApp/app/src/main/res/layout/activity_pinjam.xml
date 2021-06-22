@@ -5,30 +5,30 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp">
-    tools:context=".TambahActivity"/>
+    tools:context=".PinjamActivity"/>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilnama"
+        android:id="@+id/tilnama_peminjam"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="20dp">
 
         <EditText
-            android:id="@+id/inp_nama"
+            android:id="@+id/inp_nama_peminjam"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nama Peminjam" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilno"
+        android:id="@+id/tilno_hp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp">
 
         <EditText
-            android:id="@+id/inp_no"
+            android:id="@+id/inp_no_hp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nomor HP Peminjam" />
@@ -139,6 +139,13 @@
             android:layout_height="60dp"
             android:text="24 jam Rp. 25000" />
     </LinearLayout>
+    <Button
+        android:id="@+id/btn_batal"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="75dp"
+        android:text="Batal" />
 
     <Button
         android:id="@+id/btn_pinjam"

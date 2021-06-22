@@ -89,7 +89,7 @@
         android:layout_below="@id/textView5"
         android:layout_margin="20dp"
         android:src="@drawable/txt_view"
-        android:input_type="password"
+        android:text="Password"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
