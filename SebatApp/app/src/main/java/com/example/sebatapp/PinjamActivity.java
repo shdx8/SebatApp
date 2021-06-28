@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -26,8 +27,8 @@ import java.util.Map;
 
 public class PinjamActivity extends AppCompatActivity {
     EditText nama_peminjam, no_hp;
-    ImageButton lighting, micro, typec;
-    Button tigapuluh_m, dua_j, enampuluh_m, lima_j, sembilanpuluh_m, duaempat_j, btn_batal,btn_pinjam;
+    RadioGroup radio_kabel, radio_1, radio_2, radio_3;
+    Button btn_batal,btn_pinjam;
     ProgressDialog pd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,15 +47,10 @@ public class PinjamActivity extends AppCompatActivity {
         //MENGMBIL INPUTAN DARI activity_pinjam
         nama_peminjam = (EditText) findViewById(R.id.inp_nama_peminjam);
         no_hp = (EditText) findViewById(R.id.inp_no_hp);
-        lighting = (ImageButton) findViewById(R.id.inp_lightning);
-        micro = (ImageButton) findViewById(R.id.inp_micro);
-        typec = (ImageButton) findViewById(R.id.inp_typec);
-        tigapuluh_m = (Button) findViewById(R.id.inp_30);
-        dua_j = (Button) findViewById(R.id.inp_2);
-        enampuluh_m = (Button) findViewById(R.id.inp_60);
-        lima_j = (Button) findViewById(R.id.inp_5);
-        sembilanpuluh_m = (Button) findViewById(R.id.inp_90);
-        duaempat_j = (Button) findViewById(R.id.inp_24);
+        radio_kabel = (RadioGroup) findViewById(R.id.radio_kabel);
+        radio_1 = (RadioGroup) findViewById(R.id.radio_1);
+        radio_2 = (RadioGroup) findViewById(R.id.radio_2);
+        radio_3 = (RadioGroup) findViewById(R.id.radio_3);
         btn_batal = (Button) findViewById(R.id.btn_batal);
         btn_pinjam = (Button) findViewById(R.id.btn_pinjam);
         pd = new ProgressDialog(PinjamActivity.this);
@@ -90,8 +86,7 @@ public class PinjamActivity extends AppCompatActivity {
                 Map<String,String> map = new HashMap<>();
                 map.put("Nama Peminjam",nama_peminjam.getText().toString());
                 map.put("No HP",no_hp.getText().toString());
-                map.put("password",password.getText().toString());
-                map.put("grup",grup.getText().toString());
+
                 //LAST EDIT
                 return map;
             }

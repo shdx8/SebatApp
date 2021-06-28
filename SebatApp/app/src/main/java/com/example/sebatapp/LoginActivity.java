@@ -3,6 +3,7 @@ package com.example.sebatapp;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -30,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
+            setContentView(R.layout.activity_login);
             // Deklarasi komponen view
             username = (EditText) findViewById(R.id.txt_username);
             password = (EditText) findViewById(R.id.txt_password);
