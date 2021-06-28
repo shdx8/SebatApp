@@ -58,7 +58,7 @@
         android:layout_height="32dp"
         android:layout_below="@id/textView4"
         android:layout_margin="20dp"
-        android:src="@drawable/txt_view"
+        android:background="@drawable/edit_txt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
@@ -88,8 +88,7 @@
         android:layout_height="32dp"
         android:layout_below="@id/textView5"
         android:layout_margin="20dp"
-        android:src="@drawable/txt_view"
-        android:text="Password"
+        android:background="@drawable/edit_txt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -97,40 +96,30 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.585" />
 
-    <ButtonImage
+    <Button
         android:id="@+id/btn_login"
         android:layout_width="223dp"
         android:layout_height="33dp"
         android:layout_below="@id/textView5"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.679" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="65dp"
-        android:layout_height="22dp"
-        android:layout_below="@id/textView5"
-        android:layout_centerHorizontal="true"
+        android:background="@drawable/button"
         android:fontFamily="@font/extrabold"
         android:text="Masuk"
+        android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="18dp"
+        android:textSize="13dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.668" />
+        app:layout_constraintVertical_bias="0.679"
+        app:rippleColor="@color/tosca" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="198dp"
         android:layout_height="18dp"
-        android:layout_below="@id/textView6"
+        android:layout_below="@id/btn_login"
         android:layout_centerHorizontal="true"
         android:fontFamily="@font/medium"
         android:text="Lupa Password?"
@@ -138,7 +127,8 @@
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.734" />
+        app:layout_constraintVertical_bias="0.722" />
 </androidx.constraintlayout.widget.ConstraintLayout>
