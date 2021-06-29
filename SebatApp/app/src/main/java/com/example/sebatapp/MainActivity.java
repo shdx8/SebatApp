@@ -26,9 +26,9 @@ DashboardAdapter adapter;
     }
     public void addData(){
 datamenu = new ArrayList<>();
-        datamenu.add(new SetterGetter("Tambah Data", "logomenu1"));
-        datamenu.add(new SetterGetter("Sedang dipinjam", "logomenu2"));
-        datamenu.add(new SetterGetter("Penghasilan", "logomenu3"));
-        datamenu.add(new SetterGetter("Riwayat", "logomenu4"));
+        datamenu.add(new SetterGetter("Dashboard", "logomenu1"));
+        datamenu.add(new SetterGetter("Pinjam", "logomenu2"));
+        datamenu.add(new SetterGetter("Riwayat", "logomenu3"));
+        datamenu.add(new SetterGetter("Bantuan", "logomenu4"));
     }
 }
