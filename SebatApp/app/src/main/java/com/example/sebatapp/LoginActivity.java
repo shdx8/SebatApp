@@ -25,16 +25,15 @@ import android.os.Bundle;
 public class LoginActivity extends AppCompatActivity {
 
         // Parameter sesuai dengan tipe data
-        EditText username;
-        EditText password;
+        EditText txt_user, txt_pass;
         Button button;
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_login);
             // Deklarasi komponen view
-            username = (EditText) findViewById(R.id.txt_username);
-            password = (EditText) findViewById(R.id.txt_password);
+            txt_user = (EditText) findViewById(R.id.txt_username);
+            txt_pass = (EditText) findViewById(R.id.txt_password);
             button = (Button) findViewById(R.id.btn_login);
             // Setting button ketika di klik
             button.setOnClickListener(new View.OnClickListener() {
@@ -81,8 +80,8 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
                     HashMap<String, String> params = new HashMap<>();
-                    params.put("username", username.getText().toString());
-                    params.put("password", password.getText().toString());
+                    params.put("username", txt_user.getText().toString());
+                    params.put("password", txt_pass.getText().toString());
                     return params;
                 }
             };
