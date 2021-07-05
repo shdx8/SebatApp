@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/item_dsb"
+    android:id="@+id/item_list"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -9,25 +9,19 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="90dp"
         android:gravity="center"
         android:background="@drawable/radius_panel_menu">
 
-        <ImageView
-            android:id="@+id/logo_menu"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            tools:src="@drawable/dashboard" />
-
         <TextView
-            android:id="@+id/menu_tambah"
+            android:id="@+id/memetitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:fontFamily="@font/medium"
             android:textColor="@color/black"
-            android:textSize="12sp"
-            tools:text="Dashboard" />
+            android:textSize="13sp"
+            tools:text="Bantuan" />
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>
