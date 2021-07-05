@@ -37,6 +37,8 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.HolderData> {
     public void onBindViewHolder(HolderData holder, int position) {
         ModelData md  = mItems.get(position);
         holder.tvnama_peminjam.setText(md.getNama_peminjam());
+        holder.tvno_hp.setText(md.getNo_hp());
+        holder.tvkabel.setText(md.getKabel());
         holder.tvtotal.setText(md.getTotal());
         holder.tvtgl_pinjam.setText(md.getTgl_pinjam());
         holder.tvstatus.setText(md.getStatus());
@@ -53,13 +55,15 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.HolderData> {
 
     class HolderData extends RecyclerView.ViewHolder
     {
-        TextView tvnama_peminjam,tvtotal,tvtgl_pinjam,tvstatus;
+        TextView tvnama_peminjam, tvno_hp, tvkabel,tvtotal,tvtgl_pinjam,tvstatus;
         ModelData md;
 
         public  HolderData (View view)
         {
             super(view);
             tvnama_peminjam = (TextView) view.findViewById(R.id.nama_peminjam);
+            tvno_hp = (TextView) view.findViewById(R.id.no_hp);
+            tvkabel = (TextView) view.findViewById(R.id.kabel);
             tvtotal = (TextView) view.findViewById(R.id.total);
             tvtgl_pinjam = (TextView) view.findViewById(R.id.tgl_pinjam);
             tvstatus = (TextView) view.findViewById(R.id.status);
@@ -68,10 +72,6 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.HolderData> {
                 @Override
                 public void onClick(View view) {
                     Intent update = new Intent(context, PinjamActivity.class);
-                    update.putExtra("update",1);
-                    update.putExtra("Nama Peminjam",md.getNama_peminjam());
-                    update.putExtra("Total",md.getTotal());
-                    update.putExtra("Tanggal Order",md.getTgl_pinjam());
                     update.putExtra("Status",md.getStatus());
 
                     context.startActivity(update);

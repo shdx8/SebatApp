@@ -17,13 +17,25 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nama Peminjam"
+                android:text="@string/nama_peminjam"
                 android:id="@+id/nama_peminjam"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Total"
+                android:text="No HP"
                 android:layout_below="@id/nama_peminjam"
+                android:id="@+id/no_hp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kabel"
+                android:layout_below="@id/no_hp"
+                android:id="@+id/kabel"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Total"
+                android:layout_below="@id/kabel"
                 android:id="@+id/total"/>
             <TextView
                 android:layout_width="match_parent"

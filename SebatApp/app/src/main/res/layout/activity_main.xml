@@ -11,6 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="@color/green">
+        <Button
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="320dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/logout" />
 
         <ImageView
             android:layout_width="80dp"
@@ -39,7 +45,7 @@
             android:fontFamily="@font/medium"
             android:textColor="@color/black"
             android:textSize="15sp"
-            android:text="@string/txt_halo"
+            android:text="Halo"
             ></TextView>
 
         <TextView

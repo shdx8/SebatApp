@@ -31,7 +31,6 @@ public class RiwayatActivity extends AppCompatActivity {
     RecyclerView.Adapter mAdapter;
     RecyclerView.LayoutManager mManager;
     List<ModelData> mItems;
-    Button btnInsert, btnDelete;
     ProgressDialog pd;
 
     @Override
@@ -69,10 +68,12 @@ public class RiwayatActivity extends AppCompatActivity {
                                 JSONObject data = response.getJSONObject(i);
                                 ModelData md = new ModelData();
                                 //memanggil set pada Model Data
-                                md.setNama_peminjam(data.getString("Nama Peminjam"));
-                                md.setTotal(data.getString("Total"));
-                                md.setTgl_pinjam(data.getString("Tanggal Order"));
-                                md.setStatus(data.getString("Status"));
+                                md.setNama_peminjam(data.getString("nama_peminjam"));
+                                md.setNo_hp(data.getString("no_hp"));
+                                md.setKabel(data.getString("kabel"));
+                                md.setTotal(data.getString("total"));
+                                md.setTgl_pinjam(data.getString("tgl_pinjam"));
+                                md.setStatus(data.getString("status"));
                                 mItems.add(md);
                             } catch (JSONException e) {
                                 e.printStackTrace();
