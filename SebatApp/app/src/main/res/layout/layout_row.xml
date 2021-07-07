@@ -9,7 +9,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="120dp">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -49,6 +49,22 @@
                 android:text="Status"
                 android:layout_below="@id/tgl_pinjam"
                 android:id="@+id/status"/>
-        </RelativeLayout>
+            <Button
+                android:id="@+id/btn_edit"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="250dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/edit"
+                />
+            <Button
+                android:id="@+id/btn_hapus"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="300dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/remove"
+                />
+    </RelativeLayout>
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
