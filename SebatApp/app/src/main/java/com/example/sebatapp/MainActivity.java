@@ -17,6 +17,11 @@ DashboardAdapter adapter;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        user = (TextView) findViewById(R.id.halo_user);
+        //sharedpreferences = getSharedPreferences(LoginActivity.my_shared_preferences, Context.MODE_PRIVATE);
+        username = getIntent().getStringExtra(TAG_USERNAME);
+        user.setText("Halo " + username);
+
         recyclerView = findViewById(R.id.rv_menu);
         addData();
         gridLayoutManager = new GridLayoutManager(this, 2);
