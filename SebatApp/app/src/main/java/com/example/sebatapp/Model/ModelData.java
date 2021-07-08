@@ -1,14 +1,31 @@
 package com.example.sebatapp.Model;
 
-public class ModelData {String nama_peminjam, total, tgl_pinjam, status;
+public class ModelData {String nama_peminjam, no_hp, kabel, total, tgl_pinjam, status;
     public ModelData(){}
 
-    public ModelData(String nama_peminjam, String total, String tgl_pinjam, String status) {
+    public ModelData(String nama_peminjam, String no_hp, String kabel, String total,
+                     String tgl_pinjam, String status) {
         this.nama_peminjam = nama_peminjam;
+        this.no_hp = no_hp;
+        this.kabel = kabel;
         this.total = total;
         this.tgl_pinjam = tgl_pinjam;
         this.status = status;
     }
+
+    /*
+    *inp_lightning, inp_micro, inp_typec,
+        inp_30, inp_2, inp_60, inp_5, inp_90,
+    *
+    * this.inp_lightning = kabel;
+        this.inp_micro = kabel;
+        this.inp_typec = kabel;
+        this.inp_30 = total;
+        this.inp_2 = total;
+        this.inp_60 = total;
+        this.inp_5 = total;
+        this.inp_90 = total;
+    *  */
 
     //terhubung dengan Adapter Data
     public String getNama_peminjam() {
@@ -17,6 +34,80 @@ public class ModelData {String nama_peminjam, total, tgl_pinjam, status;
     //terhubung dengan RiwayatActivity
     public void setNama_peminjam(String nama_peminjam) {
         this.nama_peminjam = nama_peminjam;
+    }
+
+    public String getNo_hp() {
+        return no_hp;
+    }
+    public void setNo_hp(String no_hp) {
+        this.no_hp = no_hp;
+    }
+
+   /* public String getKabel_lightning() {
+        return inp_lightning;
+    }
+    public void setKabel_lightning(String kabel) { this.inp_lightning = kabel;
+    }
+
+    public String getKabel_micro() {
+        return inp_micro;
+    }
+    public void setKabel_micro(String kabel) { this.inp_micro = kabel;
+    }
+
+    public String getKabel_typec() {
+        return inp_typec;
+    }
+    public void setKabel_typec(String kabel) { this.inp_typec = kabel;
+    }
+
+    public String getTotal_30() {
+        return inp_30;
+    }
+    public void setTotal_30(String total) {
+        this.inp_30 = total;
+    }
+
+    public String getTotal_2() {
+        return inp_2;
+    }
+    public void setTotal_2(String total) {
+        this.inp_2 = total;
+    }
+
+    public String getTotal_60() {
+        return inp_60;
+    }
+    public void setTotal_60(String total) {
+        this.inp_60 = total;
+    }
+
+    public String getTotal_5() {
+        return inp_5;
+    }
+    public void setTotal_5(String total) {
+        this.inp_5 = total;
+    }
+
+    public String getTotal_90() {
+        return inp_90;
+    }
+    public void setTotal_90(String total) {
+        this.inp_90 = total;
+    }
+
+    public String getTotal_24() {
+        return inp_24;
+    }
+    public void setTotal_24(String total) {
+        this.inp_24 = total;
+    } */
+
+    public String getKabel() {
+        return kabel;
+    }
+    public void setKabel(String kabel) {
+        this.kabel = kabel;
     }
 
     public String getTotal() {
@@ -36,7 +127,7 @@ public class ModelData {String nama_peminjam, total, tgl_pinjam, status;
     public String getStatus() {
         return status;
     }
-    public void setStatus(String grup) {
-        this.status = grup;
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

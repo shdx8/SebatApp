@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -32,8 +33,9 @@ public class PinjamActivity extends AppCompatActivity {
     RadioGroup radio_kabel, radio_durasi;
     RadioButton radioButton;
     RadioButton inp_30, inp_60, inp_90, inp_2, inp_5, inp_24, inp_lightning, inp_micro, inp_typec;
-    Button btn_batal,btn_pinjam;
+    Button btn_batal, btn_pinjam;
     ProgressDialog pd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,10 +44,18 @@ public class PinjamActivity extends AppCompatActivity {
         /*get data from intent*/
         Intent data = getIntent();
         final int update = data.getIntExtra("update", 0);
-        String intent_username = data.getStringExtra("username");
-        String intent_grup = data.getStringExtra("grup");
-        String intent_nama = data.getStringExtra("nama");
-        String intent_password = data.getStringExtra("password");
+        String intent_nama = data.getStringExtra("nama_peminjam");
+        String intent_no_hp = data.getStringExtra("no_hp");
+        String intent_lightning = data.getStringExtra("kabel");
+        String intent_micro = data.getStringExtra("kabel");
+        String intent_typec = data.getStringExtra("kabel");
+        String intent_inp_30 = data.getStringExtra("total");
+        String intent_inp_2 = data.getStringExtra("total");
+        String intent_inp_60 = data.getStringExtra("total");
+        String intent_inp5 = data.getStringExtra("total");
+        String intent_inp_90 = data.getStringExtra("total");
+        String intent_inp_24 = data.getStringExtra("total");
+        //String intent_status = data.getStringExtra("status");
         /*end get data from intent*/
 
         //MENGMBIL INPUTAN DARI activity_pinjam
@@ -260,24 +270,55 @@ public class PinjamActivity extends AppCompatActivity {
         };
 
         AppController.getInstance().addToRequestQueue(updateReq);
+
+        btn_batal = (Button) findViewById(R.id.btn_batal);
+        btn_pinjam = (Button) findViewById(R.id.btn_pinjam);
+        pd = new ProgressDialog(PinjamActivity.this);
+
+
+        if (update == 1) {
+            btn_pinjam.setText("Update Data");
+            nama_peminjam.setText(intent_nama);
+            no_hp.setVisibility(View.GONE);
+        }
+        btn_pinjam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (update == 1) {
+                    Update_data();
+                } else {
+                    simpanData();
+                }
+            }
+        });
+
+        btn_batal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent main = new Intent(PinjamActivity.this, RiwayatActivity.class);
+                startActivity(main);
+            }
+        });
     }
-    private void simpanData() {
-        pd.setMessage("Menyimpan Data");
+
+    private void Update_data() {
+        pd.setMessage("Update Data");
         pd.setCancelable(false);
         pd.show();
 
-        StringRequest sendData = new StringRequest(Request.Method.POST, ServerAPI.URL_INSERT, new Response.Listener<String>() {
+        StringRequest updateReq = new StringRequest(Request.Method.POST, ServerAPI.URL_UPDATE,
+                new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         pd.cancel();
                         try {
                             JSONObject res = new JSONObject(response);
-                            Toast.makeText(PinjamActivity.this, "pesan : "+   res.getString("message") , Toast.LENGTH_SHORT).show();
+                            Toast.makeText(PinjamActivity.this, "pesan : " + res.getString("message"), Toast.LENGTH_SHORT).show();
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
 
-                        startActivity( new Intent(PinjamActivity.this,RiwayatActivity.class));
+                        startActivity(new Intent(PinjamActivity.this, RiwayatActivity.class));
                     }
                 },
                 new Response.ErrorListener() {
@@ -286,7 +327,48 @@ public class PinjamActivity extends AppCompatActivity {
                         pd.cancel();
                         Toast.makeText(PinjamActivity.this, "pesan : Gagal Insert Data", Toast.LENGTH_SHORT).show();
                     }
-                }){
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                 Map<String,String> map = new HashMap<>();
+                map.put("nama_peminjam",nama_peminjam.getText().toString());
+                map.put("no_hp",no_hp.getText().toString());
+                
+                map.put("kabel",inp_lightning.getText().toString());
+                map.put("total",inp_30.getText().toString());
+                return map;
+            }
+        };
+
+        AppController.getInstance().addToRequestQueue(updateReq);
+    }
+
+    private void simpanData() {
+        pd.setMessage("Menyimpan Data");
+        pd.setCancelable(false);
+        pd.show();
+
+        StringRequest sendData = new StringRequest(Request.Method.POST, ServerAPI.URL_INSERT, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                pd.cancel();
+                try {
+                    JSONObject res = new JSONObject(response);
+                    Toast.makeText(PinjamActivity.this, "pesan : " + res.getString("message"), Toast.LENGTH_SHORT).show();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                startActivity(new Intent(PinjamActivity.this, RiwayatActivity.class));
+            }
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        pd.cancel();
+                        Toast.makeText(PinjamActivity.this, "pesan : Gagal Insert Data", Toast.LENGTH_SHORT).show();
+                    }
+                }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> map = new HashMap<>();

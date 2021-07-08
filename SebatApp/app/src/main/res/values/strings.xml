@@ -8,4 +8,18 @@
     values-round/strings.xml for round devices.
     -->
     <string name="hello_world">Hello Square World!</string>
+    <string name="nama_peminjam">Nama Peminjam</string>
+    <string name="bantuan_1">Anim pariatur cliche reprehenderit, 
+        enim eiusmod high life accusamus terry richardson ad squid. 
+        3 wolf moon officia aute, non cupidatat skateboard dolor brunch. 
+        Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, 
+        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. 
+        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. 
+        Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, 
+        raw denim aesthetic synth nesciunt you probably haven
+        t heard of them accusamus labore sustainable VHS.</string>
+    <string name="bantuan_2">Bantuan 2</string>
+    <string name="bantuan_3">Bantuan 3</string>
+    <string name="bantuan_4">Bantuan 4</string>
+    <string name="bantuan_5">Bantuan 5</string>
 </resources>

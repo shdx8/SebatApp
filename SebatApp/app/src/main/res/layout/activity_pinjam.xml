@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
     tools:context=".PinjamActivity"/>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilnama_peminjam"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -29,7 +27,7 @@
 
         <EditText
             android:id="@+id/inp_nama_peminjam"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
@@ -52,7 +50,7 @@
 
         <EditText
             android:id="@+id/inp_no_hp"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
@@ -126,7 +124,6 @@
             android:text="Durasi Pinjam"
             android:textColor="@color/black"
             android:textSize="15dp" />
-
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -229,13 +226,73 @@
             android:orientation="horizontal"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp">
+        <RadioGroup
+            android:id="@+id/radio_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/inp_30"
+                android:layout_width="110dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="55dp"
+                android:layout_marginRight="50dp"
+                android:text="30 menit Rp. 1000" />
+
+            <RadioButton
+                android:id="@+id/inp_2"
+                android:layout_width="110dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="55dp"
+                android:layout_marginRight="50dp"
+                android:text="2 jam Rp. 4000" />
+
+            <RadioButton
+                android:id="@+id/inp_60"
+                android:layout_width="110dp"
+                android:layout_height="60dp"
+                android:layout_below="@+id/inp_30"
+                android:layout_marginLeft="55dp"
+                android:layout_marginRight="50dp"
+                android:text="60 menit Rp. 2000" />
+
+            <RadioButton
+                android:id="@+id/inp_5"
+                android:layout_width="110dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="55dp"
+                android:layout_marginRight="50dp"
+                android:text="5 jam Rp. 10000" />
+
+            <RadioButton
+                android:id="@+id/inp_90"
+                android:layout_width="110dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="55dp"
+                android:layout_marginRight="50dp"
+                android:text="90 menit Rp. 3000" />
+
+            <RadioButton
+                android:id="@+id/inp_24"
+                android:layout_width="110dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="55dp"
+                android:layout_marginRight="50dp"
+                android:text="24 jam Rp. 25000" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btn_pinjam"
                 android:layout_width="10dp"
                 android:layout_height="38dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="40dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/button"
@@ -249,7 +306,7 @@
                 android:layout_width="10dp"
                 android:layout_height="38dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="40dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/button"
@@ -259,5 +316,4 @@
                 android:textColor="@color/white" />
         </LinearLayout>
     </LinearLayout>
-
-</androidx.appcompat.widget.LinearLayoutCompat>
+</ScrollView>

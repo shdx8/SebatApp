@@ -16,11 +16,11 @@ import com.example.sebatapp.R;
 import java.util.List;
 
 //ADAPTER DATA UNTUK INSERT DATA
-public class AdapterData extends RecyclerView.Adapter<AdapterData.HolderData> {
+public class DeleteAdapter extends RecyclerView.Adapter<DeleteAdapter.HolderData> {
     private List<ModelData> mItems ;
     private Context context;
 
-    public AdapterData (Context context, List<ModelData> items)
+    public DeleteAdapter (Context context, List<ModelData> items)
     {
         this.mItems = items;
         this.context = context;

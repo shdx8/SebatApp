@@ -5,8 +5,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 
 import com.android.volley.Request;
@@ -31,7 +33,7 @@ public class RiwayatActivity extends AppCompatActivity {
     RecyclerView.Adapter mAdapter;
     RecyclerView.LayoutManager mManager;
     List<ModelData> mItems;
-    Button btnInsert, btnDelete;
+    Button btn_hapus;
     ProgressDialog pd;
 
     @Override
@@ -40,6 +42,7 @@ public class RiwayatActivity extends AppCompatActivity {
         setContentView(R.layout.activity_riwayat);
 
         mRecyclerview = (RecyclerView) findViewById(R.id.recyclerviewTemp);
+        btn_hapus = (Button) findViewById(R.id.btn_hapus);
         pd = new ProgressDialog(RiwayatActivity.this);
         mItems = new ArrayList<>();
 
@@ -49,6 +52,14 @@ public class RiwayatActivity extends AppCompatActivity {
         mRecyclerview.setLayoutManager(mManager);
         mAdapter = new AdapterData(RiwayatActivity.this,mItems);
         mRecyclerview.setAdapter(mAdapter);
+
+        /*btn_hapus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent hapus = new Intent(RiwayatActivity.this,Delete.class);
+                startActivity(hapus);
+            }
+        });*/
     }
 
     private void loadJson()
@@ -69,10 +80,12 @@ public class RiwayatActivity extends AppCompatActivity {
                                 JSONObject data = response.getJSONObject(i);
                                 ModelData md = new ModelData();
                                 //memanggil set pada Model Data
-                                md.setNama_peminjam(data.getString("Nama Peminjam"));
-                                md.setTotal(data.getString("Total"));
-                                md.setTgl_pinjam(data.getString("Tanggal Order"));
-                                md.setStatus(data.getString("Status"));
+                                md.setNama_peminjam(data.getString("nama_peminjam"));
+                                md.setNo_hp(data.getString("no_hp"));
+                                md.setKabel(data.getString("kabel"));
+                                md.setTotal(data.getString("total"));
+                                md.setTgl_pinjam(data.getString("tgl_pinjam"));
+                                md.setStatus(data.getString("status"));
                                 mItems.add(md);
                             } catch (JSONException e) {
                                 e.printStackTrace();
