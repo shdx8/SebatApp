@@ -38,12 +38,13 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="204dp"
-        android:layout_height="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/textView3"
         android:fontFamily="@font/medium"
         android:text="Masukkan Username Anda"
         android:textColor="@color/white"
+        android:layout_margin="50dp"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,10 +55,12 @@
 
     <EditText
         android:id="@+id/txt_username"
-        android:layout_width="300dp"
-        android:layout_height="32dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/textView4"
-        android:layout_margin="20dp"
+        android:layout_margin="50dp"
+        android:textSize="16dp"
+        android:padding="3dp"
         android:background="@drawable/edit_txt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,10 +71,11 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="198dp"
-        android:layout_height="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/textView4"
         android:fontFamily="@font/medium"
+        android:layout_margin="50dp"
         android:text="Masukkan Password Anda"
         android:textColor="@color/white"
         android:textSize="15sp"
@@ -84,10 +88,12 @@
 
     <EditText
         android:id="@+id/txt_password"
-        android:layout_width="300dp"
-        android:layout_height="32dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/textView5"
-        android:layout_margin="20dp"
+        android:layout_margin="50dp"
+        android:textSize="16dp"
+        android:padding="3dp"
         android:background="@drawable/edit_txt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

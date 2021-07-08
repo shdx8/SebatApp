@@ -32,6 +32,8 @@ import android.os.Bundle;
 public class LoginActivity extends AppCompatActivity {
 
         // Parameter sesuai dengan tipe data
+        EditText txt_user, txt_pass;
+        Button button;
         ProgressDialog pDialog;
         EditText txt_user, txt_pass;
         Button button_login;
