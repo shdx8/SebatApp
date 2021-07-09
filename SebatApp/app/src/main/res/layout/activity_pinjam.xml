@@ -3,8 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="10dp"
-    tools:context=".PinjamActivity"/>
+    android:padding="10dp">
+    tools:context=".PinjamActivity"
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,12 +28,10 @@
 
         <EditText
             android:id="@+id/inp_nama_peminjam"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:padding="10dp"
-            android:hint="Nama..."
             android:background="@drawable/edit_txt" />
 
         <TextView
@@ -50,12 +49,10 @@
 
         <EditText
             android:id="@+id/inp_no_hp"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:padding="10dp"
-            android:hint="08..."
             android:background="@drawable/edit_txt" />
 
         <TextView
@@ -87,8 +84,9 @@
                 android:layout_marginLeft="20dp"
                 android:button="@drawable/lightning"
                 android:text="lightning"
-                android:textColor="#000"
+                android:textColor="#fff"
                 android:textSize="1px"/>
+
 
             <RadioButton
                 android:id="@+id/inp_micro"
@@ -125,16 +123,17 @@
             android:textColor="@color/black"
             android:textSize="15dp" />
 
-            <TableLayout
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+            <RadioGroup
+                android:id="@+id/radio_durasi"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <RadioGroup
-                    android:id="@+id/radio_durasi"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -146,9 +145,6 @@
                         android:layout_marginRight="50dp"
                         android:layout_marginBottom="20dp"
                         android:text="1000">
-                        <com.google.android.material.button.MaterialButton
-                            android:background="@drawable/micro"
-                            />
                     </RadioButton>
 
                     <RadioButton
@@ -156,7 +152,9 @@
                         android:layout_width="110dp"
                         android:layout_height="60dp"
                         android:layout_marginLeft="20dp"
-                        android:text="2 jam Rp. 4000" />
+                        android:layout_marginRight="50dp"
+                        android:layout_marginBottom="20dp"
+                        android:text="4000"/>
                 </TableRow>
                 <TableRow
                     android:layout_width="match_parent"
@@ -169,14 +167,14 @@
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="50dp"
                         android:layout_marginBottom="20dp"
-                        android:text="60 menit Rp. 2000" />
+                        android:text="2000" />
 
                     <RadioButton
                         android:id="@+id/inp_5"
                         android:layout_width="110dp"
                         android:layout_height="60dp"
                         android:layout_marginLeft="20dp"
-                        android:text="5 jam Rp. 10000" />
+                        android:text="10000" />
                 </TableRow>
                 <TableRow
                     android:layout_width="match_parent"
@@ -188,104 +186,24 @@
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="50dp"
                         android:layout_marginBottom="20dp"
-                        android:text="90 menit Rp. 3000" />
+                        android:text="3000" />
 
                     <RadioButton
                         android:id="@+id/inp_24"
                         android:layout_width="110dp"
                         android:layout_height="60dp"
                         android:layout_marginLeft="20dp"
-                        android:text="24 jam Rp. 25000" />
+                        android:text="25000" />
                 </TableRow>
-                </RadioGroup>
-            </TableLayout>
-        <EditText
-            android:id="@+id/inp_id_pinjam"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:visibility="gone"/>
-        <EditText
-            android:id="@+id/inp_tgl_pinjam"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:visibility="gone"/>
-        <EditText
-            android:id="@+id/inp_status"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:visibility="gone"/>
+            </RadioGroup>
+        </TableLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp">
-        <RadioGroup
-            android:id="@+id/radio_1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <RadioButton
-                android:id="@+id/inp_30"
-                android:layout_width="110dp"
-                android:layout_height="60dp"
-                android:layout_marginLeft="55dp"
-                android:layout_marginRight="50dp"
-                android:text="30 menit Rp. 1000" />
-
-            <RadioButton
-                android:id="@+id/inp_2"
-                android:layout_width="110dp"
-                android:layout_height="60dp"
-                android:layout_marginLeft="55dp"
-                android:layout_marginRight="50dp"
-                android:text="2 jam Rp. 4000" />
-
-            <RadioButton
-                android:id="@+id/inp_60"
-                android:layout_width="110dp"
-                android:layout_height="60dp"
-                android:layout_below="@+id/inp_30"
-                android:layout_marginLeft="55dp"
-                android:layout_marginRight="50dp"
-                android:text="60 menit Rp. 2000" />
-
-            <RadioButton
-                android:id="@+id/inp_5"
-                android:layout_width="110dp"
-                android:layout_height="60dp"
-                android:layout_marginLeft="55dp"
-                android:layout_marginRight="50dp"
-                android:text="5 jam Rp. 10000" />
-
-            <RadioButton
-                android:id="@+id/inp_90"
-                android:layout_width="110dp"
-                android:layout_height="60dp"
-                android:layout_marginLeft="55dp"
-                android:layout_marginRight="50dp"
-                android:text="90 menit Rp. 3000" />
-
-            <RadioButton
-                android:id="@+id/inp_24"
-                android:layout_width="110dp"
-                android:layout_height="60dp"
-                android:layout_marginLeft="55dp"
-                android:layout_marginRight="50dp"
-                android:text="24 jam Rp. 25000" />
-        </RadioGroup>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btn_pinjam"

@@ -9,16 +9,18 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp">
+        android:layout_height="wrap_content">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true">
+            android:layout_centerVertical="true"
+            android:padding="16dp">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/nama_peminjam"
-                android:id="@+id/nama_peminjam"/>
+                android:id="@+id/nama_peminjam" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -49,22 +51,20 @@
                 android:text="Status"
                 android:layout_below="@id/tgl_pinjam"
                 android:id="@+id/status"/>
-            <Button
-                android:id="@+id/btn_edit"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginLeft="250dp"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/edit"
-                />
-            <Button
-                android:id="@+id/btn_hapus"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginLeft="300dp"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/remove"
-                />
-    </RelativeLayout>
+        </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textViewOptions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textStyle="bold"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                android:text="⋮"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
+
+
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

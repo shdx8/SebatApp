@@ -1,10 +1,11 @@
 package com.example.sebatapp.Model;
 
-public class ModelData {String nama_peminjam, no_hp, kabel, total, tgl_pinjam, status;
+public class ModelData {String id_pinjam, nama_peminjam, no_hp, kabel, total, tgl_pinjam, status;
     public ModelData(){}
 
-    public ModelData(String nama_peminjam, String no_hp, String kabel, String total,
+    public ModelData(String id_pinjam, String nama_peminjam, String no_hp, String kabel, String total,
                      String tgl_pinjam, String status) {
+        this.id_pinjam= id_pinjam;
         this.nama_peminjam = nama_peminjam;
         this.no_hp = no_hp;
         this.kabel = kabel;
@@ -28,6 +29,13 @@ public class ModelData {String nama_peminjam, no_hp, kabel, total, tgl_pinjam, s
     *  */
 
     //terhubung dengan Adapter Data
+    public String getId_pinjam() {
+        return id_pinjam;
+    }
+    public void setId_pinjam(String id_pinjam) {
+        this.id_pinjam = id_pinjam;
+    }
+
     public String getNama_peminjam() {
         return nama_peminjam;
     }
@@ -130,4 +138,6 @@ public class ModelData {String nama_peminjam, no_hp, kabel, total, tgl_pinjam, s
     public void setStatus(String status) {
         this.status = status;
     }
+
+
 }
