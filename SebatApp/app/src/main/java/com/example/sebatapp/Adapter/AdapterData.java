@@ -1,17 +1,21 @@
 package com.example.sebatapp.Adapter;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.sebatapp.PinjamActivity;
 import com.example.sebatapp.Model.ModelData;
+import com.example.sebatapp.PinjamActivity;
 import com.example.sebatapp.R;
+import com.example.sebatapp.RiwayatActivity;
 
 import java.util.List;
 
@@ -19,6 +23,7 @@ import java.util.List;
 public class AdapterData extends RecyclerView.Adapter<AdapterData.HolderData> {
     private List<ModelData> mItems ;
     private Context context;
+    private ProgressDialog pd;
 
     public AdapterData (Context context, List<ModelData> items)
     {
@@ -42,6 +47,31 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.HolderData> {
         holder.tvtotal.setText(md.getTotal());
         holder.tvtgl_pinjam.setText(md.getTgl_pinjam());
         holder.tvstatus.setText(md.getStatus());
+
+        holder.tvoptions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu popup = new PopupMenu(context, holder.tvoptions);
+                popup.inflate(R.menu.options_riwayat);
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.selesai :
+                                // belum ada action selesai
+                                break;
+                            case R.id.hapus:
+                                // panggil method Delete disini
+                                RiwayatActivity riwayat = new RiwayatActivity();
+                                riwayat.deleteData(md.getId_pinjam());
+                                break;
+                        }
+                        return false;
+                    }
+                });
+                popup.show();
+            }
+        });
         holder.md = md;
 
 
@@ -55,7 +85,7 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.HolderData> {
 
     class HolderData extends RecyclerView.ViewHolder
     {
-        TextView tvnama_peminjam, tvno_hp, tvkabel,tvtotal,tvtgl_pinjam,tvstatus;
+        TextView tvnama_peminjam, tvno_hp, tvkabel,tvtotal,tvtgl_pinjam,tvstatus, tvoptions;
         ModelData md;
 
         public  HolderData (View view)
@@ -67,6 +97,8 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.HolderData> {
             tvtotal = (TextView) view.findViewById(R.id.total);
             tvtgl_pinjam = (TextView) view.findViewById(R.id.tgl_pinjam);
             tvstatus = (TextView) view.findViewById(R.id.status);
+            tvoptions = (TextView) view.findViewById(R.id.textViewOptions);
+
 
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
