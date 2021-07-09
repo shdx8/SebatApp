@@ -19,7 +19,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="id_pinjam"
+                android:id="@+id/Id_pinjam" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="@string/nama_peminjam"
+                android:layout_below="@id/Id_pinjam"
                 android:id="@+id/nama_peminjam" />
             <TextView
                 android:layout_width="match_parent"
