@@ -139,7 +139,7 @@ public class RiwayatActivity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> map = new HashMap<>();
-                map.put("id", deleteID);
+                map.put("id_pinjam", deleteID);
                 return map;
             }
         };
