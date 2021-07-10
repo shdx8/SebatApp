@@ -33,7 +33,7 @@ public class Delete extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_riwayat);
 
-        btnDelete = (Button) findViewById(R.id.btn_hapus);
+        //btnDelete = (Button) findViewById(R.id.btn_hapus);
         pd = new ProgressDialog(Delete.this);
 
         btnDelete.setOnClickListener(new View.OnClickListener() {

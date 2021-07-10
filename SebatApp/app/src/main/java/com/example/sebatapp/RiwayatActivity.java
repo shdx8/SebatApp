@@ -1,21 +1,22 @@
 package com.example.sebatapp;
 
+import android.app.ProgressDialog;
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.ProgressDialog;
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.sebatapp.Adapter.AdapterData;
 import com.example.sebatapp.Model.ModelData;
 import com.example.sebatapp.Util.AppController;
@@ -26,14 +27,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class RiwayatActivity extends AppCompatActivity {
     RecyclerView mRecyclerview;
     RecyclerView.Adapter mAdapter;
     RecyclerView.LayoutManager mManager;
     List<ModelData> mItems;
-    Button btn_hapus;
     ProgressDialog pd;
 
     @Override
@@ -42,7 +44,6 @@ public class RiwayatActivity extends AppCompatActivity {
         setContentView(R.layout.activity_riwayat);
 
         mRecyclerview = (RecyclerView) findViewById(R.id.recyclerviewTemp);
-        btn_hapus = (Button) findViewById(R.id.btn_hapus);
         pd = new ProgressDialog(RiwayatActivity.this);
         mItems = new ArrayList<>();
 
@@ -53,13 +54,6 @@ public class RiwayatActivity extends AppCompatActivity {
         mAdapter = new AdapterData(RiwayatActivity.this,mItems);
         mRecyclerview.setAdapter(mAdapter);
 
-        /*btn_hapus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent hapus = new Intent(RiwayatActivity.this,Delete.class);
-                startActivity(hapus);
-            }
-        });*/
     }
 
     private void loadJson()
@@ -80,6 +74,7 @@ public class RiwayatActivity extends AppCompatActivity {
                                 JSONObject data = response.getJSONObject(i);
                                 ModelData md = new ModelData();
                                 //memanggil set pada Model Data
+                                md.setId_pinjam(data.getString("id_pinjam"));
                                 md.setNama_peminjam(data.getString("nama_peminjam"));
                                 md.setNo_hp(data.getString("no_hp"));
                                 md.setKabel(data.getString("kabel"));
@@ -104,5 +99,50 @@ public class RiwayatActivity extends AppCompatActivity {
                 });
 
         AppController.getInstance().addToRequestQueue(reqData);
+    }
+
+    public void deleteData(String deleteID) {
+
+        if (pd != null){
+            pd.setMessage("Delete Data ...");
+            pd.setCancelable(false);
+            pd.show();
+        }
+        RequestQueue queue = Volley.newRequestQueue(this);
+
+        StringRequest delReq = new StringRequest(Request.Method.POST,
+                ServerAPI.URL_DELETE,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        pd.cancel();
+                        Log.d("volley", "response :" + response.toString());
+                        try {
+                            JSONObject res = new JSONObject(response);
+                            Toast.makeText(RiwayatActivity.this, "pesan:" + res.getString("message"),
+                                    Toast.LENGTH_SHORT).show();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        loadJson();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        pd.cancel();
+                        Log.d("volley", "error:" + error.getMessage());
+                        Toast.makeText(RiwayatActivity.this, "pesan : gagal menghapus data",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> map = new HashMap<>();
+                map.put("id_pinjam", deleteID);
+                return map;
+            }
+        };
+        queue.add(delReq);
     }
 }

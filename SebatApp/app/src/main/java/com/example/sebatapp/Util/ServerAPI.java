@@ -1,9 +1,10 @@
 package com.example.sebatapp.Util;
 
 public class ServerAPI {
-    public static final String URL_DATA   = "http://192.168.43.176/sebat/Pinjam/Api";
-    public static final String URL_INSERT = "http://192.168.43.176/sebat/Pinjam/ApiInsert";
-    public static final String URL_DELETE = "http://192.168.43.176/sebat/Pinjam/ApiDelete";
-    public static final String URL_UPDATE = "http://192.168.43.176/sebat/Pinjam/ApiUpdate";
-    public static final String URL_LOGIN = "http://192.168.43.176/Website/crud_android";
+    private final static String BASE_URL = "http://192.168.1.67/sebat/Pinjam";
+    public static final String URL_DATA   = BASE_URL + "/Api";
+    public static final String URL_INSERT = BASE_URL + "/ApiInsert";
+    public static final String URL_DELETE = BASE_URL + "/ApiDelete";
+    public static final String URL_UPDATE = BASE_URL + "/ApiUpdate";
+    public static final String URL_LOGIN = BASE_URL + "/ApiLogin";
 }
