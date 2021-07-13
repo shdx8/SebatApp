@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.sebatapp">
+    package="com.sebat.sebatapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name=".Util.AppController"
+        android:name="com.sebat.sebatapp.Util.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -14,25 +14,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SebatApp"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Bantuan_5"></activity>
-        <activity android:name=".Bantuan_4" />
-        <activity android:name=".Bantuan_3" />
-        <activity android:name=".Bantuan_2" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.sebat.sebatapp.Bantuan_5"></activity>
+        <activity android:name="com.sebat.sebatapp.Bantuan_4" />
+        <activity android:name="com.sebat.sebatapp.Bantuan_3" />
+        <activity android:name="com.sebat.sebatapp.Bantuan_2" />
+        <activity android:name="com.sebat.sebatapp.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".UpdateActivity" />
-        <activity android:name=".DashboardActivity" />
-        <activity android:name=".PinjamActivity" />
-        <activity android:name=".RiwayatActivity" />
-        <activity android:name=".BantuanActivity" />
-        <activity android:name=".Bantuan_1" />
-        <activity android:name=".ProfileActivity" />
+        <activity android:name="com.sebat.sebatapp.LoginActivity" />
+        <activity android:name="com.sebat.sebatapp.UpdateActivity" />
+        <activity android:name="com.sebat.sebatapp.DashboardActivity" />
+        <activity android:name="com.sebat.sebatapp.PinjamActivity" />
+        <activity android:name="com.sebat.sebatapp.RiwayatActivity" />
+        <activity android:name="com.sebat.sebatapp.BantuanActivity" />
+        <activity android:name="com.sebat.sebatapp.Bantuan_1" />
+        <activity android:name="com.sebat.sebatapp.ProfileActivity" />
     </application>
 
 </manifest>
