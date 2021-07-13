@@ -3,6 +3,11 @@ package com.example.sebatapp;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,6 +42,8 @@ public class RiwayatActivity extends AppCompatActivity {
     RecyclerView.LayoutManager mManager;
     List<ModelData> mItems;
     ProgressDialog pd;
+    PopupMenu.OnMenuItemClickListener deleteID;
+    ImageButton done, delete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +53,8 @@ public class RiwayatActivity extends AppCompatActivity {
         mRecyclerview = (RecyclerView) findViewById(R.id.recyclerviewTemp);
         pd = new ProgressDialog(RiwayatActivity.this);
         mItems = new ArrayList<>();
+//        done = (ImageButton) findViewById(R.id.done);
+//        delete = (ImageButton) findViewById(R.id.delete);
 
         loadJson();
 
@@ -101,8 +110,7 @@ public class RiwayatActivity extends AppCompatActivity {
         AppController.getInstance().addToRequestQueue(reqData);
     }
 
-    public void deleteData(String deleteID) {
-
+    public void deleteData() {
         if (pd != null){
             pd.setMessage("Delete Data ...");
             pd.setCancelable(false);
@@ -139,10 +147,13 @@ public class RiwayatActivity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> map = new HashMap<>();
-                map.put("id_pinjam", deleteID);
+                map.put("id_pinjam", deleteID.toString());
+                //map.put("id_pinjam", mAdapter.getId_pinjam().getText(), deleteID);
                 return map;
             }
         };
         queue.add(delReq);
     }
+
+
 }

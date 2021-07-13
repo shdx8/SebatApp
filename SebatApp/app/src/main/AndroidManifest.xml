@@ -26,6 +26,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />
+        <activity android:name=".UpdateActivity" />
         <activity android:name=".DashboardActivity" />
         <activity android:name=".PinjamActivity" />
         <activity android:name=".RiwayatActivity" />

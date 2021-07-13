@@ -9,12 +9,14 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center">
         <RelativeLayout
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:padding="16dp">
+            android:padding="16dp"
+            android:layout_alignParentLeft="true">
 
             <TextView
                 android:layout_width="match_parent"
@@ -39,11 +41,17 @@
                 android:text="Kabel"
                 android:layout_below="@id/no_hp"
                 android:id="@+id/kabel"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:padding="16dp">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Total"
-                android:layout_below="@id/kabel"
                 android:id="@+id/total"/>
             <TextView
                 android:layout_width="match_parent"
@@ -59,17 +67,40 @@
                 android:id="@+id/status"/>
         </RelativeLayout>
 
-            <TextView
-                android:id="@+id/textViewOptions"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:textStyle="bold"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:layout_margin="10dp"
-                android:text="⋮"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_marginLeft="240dp"-->
+<!--            android:layout_marginTop="70dp">-->
+<!--            <ImageButton-->
+<!--                android:id="@+id/done"-->
+<!--                android:layout_width="24dp"-->
+<!--                android:layout_height="24dp"-->
+<!--                android:background="@drawable/done"-->
+<!--                />-->
+<!--            <ImageButton-->
+<!--                android:id="@+id/delete"-->
+<!--                android:layout_width="24dp"-->
+<!--                android:layout_height="24dp"-->
+<!--                android:background="@drawable/delete"-->
+<!--                android:layout_marginLeft="15dp"-->
+<!--                />-->
+<!--        </LinearLayout>-->
+
+
+
+<!--            <TextView-->
+<!--                android:id="@+id/textViewOptions"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:padding="16dp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_alignParentRight="true"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:text="⋮"-->
+<!--                android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>-->
 
 
     </RelativeLayout>
