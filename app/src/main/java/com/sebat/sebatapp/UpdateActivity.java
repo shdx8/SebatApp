@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -35,6 +37,9 @@ public class UpdateActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setStatusBarColor(Color.parseColor("#0FC883"));
+        }
         setContentView(R.layout.activity_update);
 
         /*get data from intent*/
@@ -56,7 +61,6 @@ public class UpdateActivity extends AppCompatActivity{
 
         if(update == 1) {
 
-            btn_update.setText("Update Data");
             id_pinjam.setText(intent_id);
             nama_peminjam.setText(intent_nama);
             status.setText(intent_status);
@@ -73,6 +77,13 @@ public class UpdateActivity extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 delete();
+            }
+        });
+        btn_kembali.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent main = new Intent(UpdateActivity.this, RiwayatActivity.class);
+                startActivity(main);
             }
         });
     }

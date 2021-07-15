@@ -1,15 +1,14 @@
 <resources>
-    <string name="app_name">Sebat App</string>
+    <string name="app_name">Sebat</string>
     <string name="txt_halo">Halo Sebaters</string>
-    <string name="txt_selamat">Selamat data di aplikasi SEBAT mobile</string>
+    <string name="txt_selamat">Selamat datang di aplikasi SEBAT</string>
     <string name="title_activity_dashboard">DashboardActivity</string>
     <!--
     This string is used for square devices and overridden by hello_world in
     values-round/strings.xml for round devices.
     -->
     <string name="hello_world">Hello Square World!</string>
-    <string name="nama_peminjam">Nama Peminjam</string>
-    <string name="bantuan_1">Anim pariatur cliche reprehenderit, 
+    <string name="bantuan_1">Anim pariatur cliche reprehenderit,
         enim eiusmod high life accusamus terry richardson ad squid. 
         3 wolf moon officia aute, non cupidatat skateboard dolor brunch. 
         Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, 
@@ -22,4 +21,7 @@
     <string name="bantuan_3">Bantuan 3</string>
     <string name="bantuan_4">Bantuan 4</string>
     <string name="bantuan_5">Bantuan 5</string>
+    <string name="oil_price">Total Penghasilan</string>
+    <string name="price_in_last_12_days">Price in last 12 days</string>
+    <string name="klik"><u> Klik disini</u></string>
 </resources>

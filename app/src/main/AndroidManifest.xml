@@ -8,16 +8,13 @@
     <application
         android:name="com.sebat.sebatapp.Util.AppController"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.SebatApp"
-        android:usesCleartextTraffic="true">
-        <activity android:name="com.sebat.sebatapp.Bantuan_5"></activity>
-        <activity android:name="com.sebat.sebatapp.Bantuan_4" />
-        <activity android:name="com.sebat.sebatapp.Bantuan_3" />
-        <activity android:name="com.sebat.sebatapp.Bantuan_2" />
+        android:usesCleartextTraffic="true"
+        >
         <activity android:name="com.sebat.sebatapp.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,7 +28,11 @@
         <activity android:name="com.sebat.sebatapp.PinjamActivity" />
         <activity android:name="com.sebat.sebatapp.RiwayatActivity" />
         <activity android:name="com.sebat.sebatapp.BantuanActivity" />
-        <activity android:name="com.sebat.sebatapp.Bantuan_1" />
+        <activity android:name="com.sebat.sebatapp.Bantuan_1"/>
+        <activity android:name="com.sebat.sebatapp.Bantuan_2"/>
+        <activity android:name="com.sebat.sebatapp.Bantuan_3"/>
+        <activity android:name="com.sebat.sebatapp.Bantuan_4"/>
+        <activity android:name="com.sebat.sebatapp.Bantuan_5"/>
         <activity android:name="com.sebat.sebatapp.ProfileActivity" />
     </application>
 

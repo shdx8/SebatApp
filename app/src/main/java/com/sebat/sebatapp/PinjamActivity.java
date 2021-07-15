@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -30,23 +32,26 @@ public class PinjamActivity extends AppCompatActivity {
     EditText nama_peminjam, no_hp;
     RadioGroup radio_kabel, radio_durasi;
     RadioButton inp_lightning, inp_micro, inp_typec, inp_30, inp_2, inp_60, inp_5, inp_90, inp_24;
-    Button btn_batal, btn_pinjam;
+    Button btn_batal, btn_pinjam, btn_kembali;
     ProgressDialog pd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setStatusBarColor(Color.parseColor("#0FC883"));
+        }
         setContentView(R.layout.activity_pinjam);
 
         //MENGMBIL INPUTAN DARI activity_pinjam
         nama_peminjam = (EditText) findViewById(R.id.inp_nama_peminjam);
         no_hp = (EditText) findViewById(R.id.inp_no_hp);
         radio_kabel = (RadioGroup) findViewById(R.id.radio_kabel);
-        btn_batal = (Button) findViewById(R.id.btn_batal);
+        btn_kembali = (Button) findViewById(R.id.btn_kembali);
         btn_pinjam = (Button) findViewById(R.id.btn_pinjam);
         pd = new ProgressDialog(PinjamActivity.this);
         radio_durasi = (RadioGroup) findViewById(R.id.radio_durasi);
-        btn_batal = (Button) findViewById(R.id.btn_batal);
+        btn_kembali = (Button) findViewById(R.id.btn_kembali);
         btn_pinjam = (Button) findViewById(R.id.btn_pinjam);
         pd = new ProgressDialog(PinjamActivity.this);
 
@@ -169,10 +174,10 @@ public class PinjamActivity extends AppCompatActivity {
             }
         });
 
-        btn_batal.setOnClickListener(new View.OnClickListener() {
+        btn_kembali.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent main = new Intent(PinjamActivity.this, RiwayatActivity.class);
+                Intent main = new Intent(PinjamActivity.this, MainActivity.class);
                 startActivity(main);
             }
         });

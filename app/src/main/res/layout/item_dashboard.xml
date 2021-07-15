@@ -9,14 +9,14 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="150dp"
         android:gravity="center"
         android:background="@drawable/radius_panel_menu">
 
         <ImageView
             android:id="@+id/logo_menu"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
             tools:src="@drawable/dashboard" />
 
         <TextView

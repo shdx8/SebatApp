@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -17,19 +19,16 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<SetterGetter> datamenu;
     GridLayoutManager gridLayoutManager;
     DashboardAdapter adapter;
-    TextView user;
-    String username;
     SharedPreferences sharedpreferences;
 
-    public static final String TAG_USERNAME = "username";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setStatusBarColor(Color.parseColor("#0FC883"));
+        }
         setContentView(R.layout.activity_main);
-        user = (TextView) findViewById(R.id.halo_user);
         //sharedpreferences = getSharedPreferences(LoginActivity.my_shared_preferences, Context.MODE_PRIVATE);
-        username = getIntent().getStringExtra(TAG_USERNAME);
-        user.setText("Halo " + username);
 
         recyclerView = findViewById(R.id.rv_menu);
         addData();

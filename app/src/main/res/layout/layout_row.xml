@@ -10,64 +10,147 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:gravity="center">
         <RelativeLayout
-            android:layout_width="200dp"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:padding="16dp"
+            android:padding="12dp"
+            android:id="@+id/txtL"
             android:layout_alignParentLeft="true">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="ID"
+                android:textStyle="bold"
+                android:id="@+id/id"
+                android:textSize="16dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama"
+                android:textStyle="bold"
+                android:layout_below="@+id/id"
+                android:id="@+id/nama"
+                android:textSize="16dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No HP"
+                android:textStyle="bold"
+                android:layout_below="@+id/nama"
+                android:id="@+id/hp"
+                android:textSize="16dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kabel"
+                android:textStyle="bold"
+                android:layout_below="@+id/hp"
+                android:textSize="16dp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="70dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="id_pinjam"
+                android:textSize="16dp"
                 android:id="@+id/Id_pinjam" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/nama_peminjam"
+                android:text="nama"
                 android:layout_below="@id/Id_pinjam"
+                android:textSize="16dp"
                 android:id="@+id/nama_peminjam" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="No HP"
+                android:textSize="16dp"
                 android:layout_below="@id/nama_peminjam"
                 android:id="@+id/no_hp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Kabel"
+                android:textSize="16dp"
                 android:layout_below="@id/no_hp"
                 android:id="@+id/kabel"/>
         </RelativeLayout>
         <RelativeLayout
-            android:layout_width="200dp"
+            android:layout_width="85dp"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
-            android:padding="16dp">
+            android:layout_marginRight="90dp"
+            android:layout_centerVertical="true"
+            android:padding="12dp">
+
             <TextView
+                android:id="@+id/tot"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Total"
-                android:id="@+id/total"/>
+                android:textStyle="bold"
+                android:textSize="16dp" />
+
             <TextView
+                android:id="@+id/tgl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tanggal Order"
-                android:layout_below="@id/total"
-                android:id="@+id/tgl_pinjam"/>
+                android:layout_below="@id/tot"
+                android:text="Tanggal"
+                android:textStyle="bold"
+                android:textSize="16dp" />
+
             <TextView
+                android:id="@+id/stats"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/tgl"
                 android:text="Status"
+                android:textStyle="bold"
+                android:textSize="16dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="1dp">
+
+            <TextView
+                android:id="@+id/total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Total"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/tgl_pinjam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/total"
+                android:text="Tanggal Order"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/tgl_pinjam"
-                android:id="@+id/status"/>
+                android:text="Status"
+                android:textSize="16dp" />
         </RelativeLayout>
 
-<!--        <LinearLayout-->
+        <!--        <LinearLayout-->
 <!--            android:layout_width="match_parent"-->
 <!--            android:layout_height="wrap_content"-->
 <!--            android:orientation="horizontal"-->

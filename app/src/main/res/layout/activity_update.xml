@@ -1,142 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="10dp">
-    tools:context=".PinjamActivity"
+    android:padding="10dp"
+    android:background="@color/abuspasi">
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="10dp"
-        android:gravity="center"
-        android:layout_gravity="center"
-        >
+
         <Button
             android:id="@+id/btn_kembali"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
             android:background="@drawable/back"
             />
-            <TextView
-                android:id="@+id/txtID"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="@font/medium"
-                android:text="ID Pinjam"
-                android:textColor="@color/black"
-                android:textSize="16dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/form">
+        <TextView
+            android:id="@+id/txtID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/medium"
+            android:text="ID Pinjam"
+            android:textColor="@color/black"
+            android:textSize="16dp" />
 
-            <EditText
-                android:id="@+id/inp_id"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:textSize="24dp"
-                android:focusable="false"
-                />
+        <EditText
+            android:id="@+id/inp_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textSize="20dp"
+            android:focusable="false"
+            />
 
-            <TextView
-                android:id="@+id/textNo_hp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="@font/medium"
-                android:text="Nama Peminjam"
-                android:textColor="@color/black"
-                android:textSize="16dp" />
+        <TextView
+            android:id="@+id/textNo_hp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/medium"
+            android:text="Nama Peminjam"
+            android:textColor="@color/black"
+            android:textSize="16dp" />
 
-            <EditText
-                android:id="@+id/inp_nama"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:textSize="24dp"
-                android:enabled="false"
-                android:focusable="false"/>
+        <EditText
+            android:id="@+id/inp_nama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textSize="20dp"
+            android:enabled="false"
+            android:focusable="false"/>
 
-            <TextView
-                android:id="@+id/txtstatus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="@font/medium"
-                android:text="Status"
-                android:textColor="@color/black"
-                android:textSize="16dp" />
+        <TextView
+            android:id="@+id/txtstatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/medium"
+            android:text="Status"
+            android:textColor="@color/black"
+            android:textSize="16dp" />
 
-            <EditText
-                android:id="@+id/inp_status"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:focusable="false"
-                android:textSize="24dp"/>
+        <EditText
+            android:id="@+id/inp_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:focusable="false"
+            android:textSize="20dp"
+            />
 
 
-<!--        <Switch-->
-<!--            android:id="@+id/switch1"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginLeft="20dp"-->
-<!--            android:layout_marginRight="20dp"-->
-<!--            android:text="Selesai"-->
-<!--            android:textSize="16dp" />-->
+        <!--        <Switch-->
+        <!--            android:id="@+id/switch1"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginLeft="20dp"-->
+        <!--            android:layout_marginRight="20dp"-->
+        <!--            android:text="Selesai"-->
+        <!--            android:textSize="16dp" />-->
 
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="50dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="200dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
 
-                <Button
-                    android:id="@+id/btn_update"
-                    android:layout_width="10dp"
-                    android:layout_height="38dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="40dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/button"
-                    android:fontFamily="@font/extrabold"
-                    android:text="Update"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white" />
+            <Button
+                android:id="@+id/btn_update"
+                android:layout_width="75dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_rounded"
+                android:fontFamily="@font/extrabold"
+                android:text="Selesai"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
 
-                <Button
-                    android:id="@+id/btn_delete"
-                    android:layout_width="10dp"
-                    android:layout_height="38dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="40dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/button"
-                    android:fontFamily="@font/extrabold"
-                    android:text="Delete"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white" />
-
-            </LinearLayout>
+            <Button
+                android:id="@+id/btn_delete"
+                android:layout_width="75dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_red"
+                android:fontFamily="@font/extrabold"
+                android:text="Delete"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
 
         </LinearLayout>
-    </ScrollView>
+
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,8 +1,13 @@
 package com.sebat.sebatapp;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.Toast;
@@ -40,11 +45,14 @@ public class RiwayatActivity extends AppCompatActivity {
     List<ModelData> mItems;
     ProgressDialog pd;
     PopupMenu.OnMenuItemClickListener deleteID;
-    ImageButton done, delete;
+    Button done, kembali;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setStatusBarColor(Color.parseColor("#0FC883"));
+        }
         setContentView(R.layout.activity_riwayat);
 
         mRecyclerview = (RecyclerView) findViewById(R.id.recyclerviewTemp);
@@ -52,6 +60,7 @@ public class RiwayatActivity extends AppCompatActivity {
         mItems = new ArrayList<>();
 //        done = (ImageButton) findViewById(R.id.done);
 //        delete = (ImageButton) findViewById(R.id.delete);
+        kembali = (Button) findViewById(R.id.btn_kembali);
 
         loadJson();
 
@@ -59,6 +68,14 @@ public class RiwayatActivity extends AppCompatActivity {
         mRecyclerview.setLayoutManager(mManager);
         mAdapter = new AdapterData(RiwayatActivity.this,mItems);
         mRecyclerview.setAdapter(mAdapter);
+
+        kembali.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent main = new Intent(RiwayatActivity.this, MainActivity.class);
+                startActivity(main);
+            }
+        });
 
     }
 

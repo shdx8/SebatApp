@@ -10,12 +10,13 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="@color/green">
+        android:background="@color/sebats">
         <Button
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_marginLeft="320dp"
+            android:layout_alignParentRight="true"
             android:layout_marginTop="20dp"
+            android:layout_marginRight="25dp"
             android:background="@drawable/logout" />
 
         <ImageView
@@ -34,17 +35,18 @@
         android:layout_marginLeft="25dp"
         android:layout_marginTop="150dp"
         android:layout_marginRight="25dp"
+        android:gravity="center"
         android:background="@drawable/radius_box">
 
         <TextView
             android:id="@+id/halo_user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
             android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
             android:fontFamily="@font/medium"
             android:textColor="@color/black"
-            android:textSize="15sp"
+            android:textSize="16dp"
             android:text="Halo"
             ></TextView>
 
@@ -53,11 +55,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/halo_user"
-            android:layout_marginTop="10dp"
             android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
             android:fontFamily="@font/medium"
             android:textColor="@color/black"
-            android:textSize="15sp"
+            android:textSize="16dp"
             android:text="@string/txt_selamat"
             ></TextView>
     </RelativeLayout>

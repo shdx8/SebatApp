@@ -2,13 +2,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@color/abuspasi">
+    <Button
+        android:id="@+id/btn_kembali"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/back"
+        />
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="320dp"
         android:layout_gravity="center"
         android:layout_height="match_parent"
         android:id="@+id/recyclerviewTemp"
         android:layout_margin="20dp"/>
-
-
 </LinearLayout>
