@@ -15,14 +15,15 @@
         android:theme="@style/Theme.SebatApp"
         android:usesCleartextTraffic="true"
         >
-        <activity android:name="com.sebat.sebatapp.MainActivity">
+
+        <activity android:name="com.sebat.sebatapp.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.sebat.sebatapp.LoginActivity" />
+        <activity android:name="com.sebat.sebatapp.MainActivity"/>
         <activity android:name="com.sebat.sebatapp.UpdateActivity" />
         <activity android:name="com.sebat.sebatapp.DashboardActivity" />
         <activity android:name="com.sebat.sebatapp.PinjamActivity" />
