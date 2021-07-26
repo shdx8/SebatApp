@@ -36,6 +36,20 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(gridLayoutManager);
         adapter = new DashboardAdapter(datamenu);
         recyclerView.setAdapter(adapter);
+
+        logout = (Button) findViewById(R.id.btn_logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                // update login session ke FALSE dan mengosongkan nilai id dan username
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                finish();
+                startActivity(intent);
+            }
+        });
+
     }
     public void addData(){
         datamenu = new ArrayList<>();
